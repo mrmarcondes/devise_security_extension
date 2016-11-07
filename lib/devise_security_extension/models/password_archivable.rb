@@ -61,7 +61,7 @@ module Devise
         if encrypted_password_changed?
           if archive_count.to_i > 0
             old_passwords.create! old_password_params
-            old_passwords.order(:id).reverse_order.offset(archive_count).destroy_all
+            old_passwords.desc(:id).offset(archive_count).destroy_all
           else
             old_passwords.destroy_all
           end
