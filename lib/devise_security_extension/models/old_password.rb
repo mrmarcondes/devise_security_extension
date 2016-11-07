@@ -5,7 +5,7 @@ class OldPassword
   field :encrypted_password, type: String
   field :password_salt, type: String
   field :password_archivable_id, type: Integer
-  field :password_archivable_type, type => String
+  field :password_archivable_type, type: String
 
   validates :encrypted_password, :password_archivable_type, presence: true
 
