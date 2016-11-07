@@ -39,7 +39,7 @@ module Devise
 
         self.password_changed_at
       end
-      
+
       def expire_password_after
         self.class.expire_password_after
       end
@@ -48,7 +48,7 @@ module Devise
 
         # is password changed then update password_cahanged_at
         def update_password_changed
-          self.password_changed_at = Time.now if (self.new_record? or self.encrypted_password_changed?) and not self.password_changed_at_changed?
+          self.password_changed_at = Time.now if (self.new_record? or self.encrypted_password_changed?) and not self.password_changed?
         end
 
       module ClassMethods
