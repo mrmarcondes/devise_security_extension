@@ -9,7 +9,7 @@ class OldPassword
 
   validates :encrypted_password, :password_archivable_type, presence: true
 
-  attr_accessible :encrypted_password
+  attr_accessor :encrypted_password
 
   belongs_to :password_archivable, polymorphic: true
 end
